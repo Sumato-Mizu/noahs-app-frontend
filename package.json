@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "nodemon": "gulp nodemon"
+    "nodemon": "gulp nodemon",
+    "lint": "eslint src/app/",
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,10 @@
     "express": "^4.13.4"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^7.0.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-livereload": "^3.8.1",

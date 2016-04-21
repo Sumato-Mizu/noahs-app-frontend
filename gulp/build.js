@@ -21,14 +21,14 @@ gulp.task("watch", ["build"], () => {
   gulp.watch("./src/app/**/*.js", ["build"]);
 });
 
-const	nodemon = require("gulp-nodemon");
+const nodemon = require("gulp-nodemon");
 
 gulp.task("nodemon", ["watch"], () => {
-	nodemon({
-		script: "index.js",
-		ext: "js html css",
-		ignore: ["src/app/**/*.js", "dist", "gulp", "test"]
-	}).on("restart", function(){
-		console.log("server restart");
-	})
+  nodemon({
+    script: "index.js",
+    ext: "js html css",
+    ignore: ["src/app/**/*.js", "dist", "gulp", "test"]
+  }).on("restart", function(){
+    console.log("server restart");
+  })
 })
