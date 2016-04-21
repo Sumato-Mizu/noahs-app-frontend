@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "bower install",
     "start": "node index.js",
     "nodemon": "gulp nodemon",
-    "lint": "eslint src/app/",
-    "test": "istanbul cover node_modules/mocha/bin/_mocha -- test/**/*.js"
+    "lint": "eslint src/app/ || true",
+    "test": "mocha test/**/*.js",
+    "test:coverage": "istanbul cover node_modules/mocha/bin/_mocha -- test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
     "express": "^4.13.4"
   },
   "devDependencies": {
+    "bower": "^1.7.9",
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
     "eslint": "^2.8.0",
