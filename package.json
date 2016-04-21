@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "bower install",
     "start": "node index.js",
+    "build": "gulp build",
     "lint": "eslint src/app/ || true",
     "test": "mocha test/**/*.js",
     "test:coverage": "istanbul cover node_modules/mocha/bin/_mocha -- test/**/*.js"
