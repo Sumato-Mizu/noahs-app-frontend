@@ -1,9 +1,13 @@
+.main-container {
+  margin-left: 15px;
+  /*background-color: yellow;*/
+}
+
 .map {
   height: 400px;
   width: 100%;
 }
-
-html {
+/*html {
   height: 100%;
   width: 100%;
   padding: 0px;
@@ -15,7 +19,7 @@ body {
   padding: 0px;
   border: 0px;
   overflow: hidden;
-}
+}*/
 #map {
   min-height: 100%;
   width: 100%;

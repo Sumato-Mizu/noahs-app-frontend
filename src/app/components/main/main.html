@@ -1,22 +1,34 @@
-<div>
-  <p>Hi. This is our app for parsing tif-links from the fmi-api.</p>
+<div class="main-container container">
+  <h1>Is the coolest app ever.</h1>
+  <p>Hi. This is our app for parsing tif-links from the fmi-api <a href="http://data.fmi.fi/fmi-apikey/">http://data.fmi.fi/fmi-apikey/</a>.</p>
   <p>
     You simply put your own API-key and the query you want to send to these fields
     and then our API sends the request for you and fetches the XML-link and the tif-links for you.
     Cool stuff huh?
   </p>
   <div>
-    <label>your api-key</label>
-    <input ng-model="api_field">
-    <label>your query</label>
-    <input ng-model="query_field">
-    <button ng-click="sendRequest()">Send</button>
+    <form role="form">
+      <div class="form-group">
+        <label>Your api-key</label>
+        <input class="form-control" ng-model="api_field">
+        <label>Your query</label>
+        <input class="form-control" ng-model="query_field">
+        <button class="btn btn-primary" ng-click="sendRequest()">Send</button>
+      </div>
+    </form>
   </div>
   <h2>Results</h2>
-  <p>{{ fmilink }}</p>
-  <ul>
-    <li ng-repeat="tiflink in tiflinks">
-      {{ tiflink }}
-    </li>
-  </ul>
+  <div ng-show="tiflinks.length !== 0">
+    <h3>Resulting xml</h3>
+    <a href="{{ fmilink }}">{{ fmilink }}</a>
+    <h3>Resulting tif-files parsed from the xml</h3>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="tiflink in tiflinks">
+        <div>
+          <a href="{{ tiflink }}">{{ tiflink }}</a>
+        </div>
+        <button class="btn btn-success"ng-click="generateMap($index)">Generate picture for the Map</button>
+      </li>
+    </ul>
+  </div>
 </div>

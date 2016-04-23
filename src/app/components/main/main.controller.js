@@ -11,4 +11,12 @@ NoahsApp.controller("MainController", function($scope, FmiAPIService) {
       $scope.tiflinks = result.tiflinks;
     })
   }
+  $scope.generateMap = function(index) {
+    var picture = $scope.tiflinks[index];
+      PictureService
+      .requestRadarPicture(picture)
+      .then(function(result) {
+
+      })
+  }
 })

@@ -9,10 +9,16 @@ NoahsApp.config(function($stateProvider, $urlRouterProvider) {
       controller: "MainController",
       controllerAs: "main"
     })
-    .state("leaf", {
-      url: "/leaf",
-      templateUrl: "app/components/leaflet/leaflet.html",
-      controller: "LeafletController",
-      controllerAs: "leaflet"
+    .state("map", {
+      url: "/map",
+      templateUrl: "app/components/map/map.html",
+      controller: "MapController",
+      controllerAs: "map"
+    })
+    .state("pump", {
+      url: "/pump/:id",
+      templateUrl: "app/components/pump/pump.html",
+      controller: "PumpController",
+      controllerAs: "pump"
     })
 })
