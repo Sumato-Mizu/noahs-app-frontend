@@ -29,6 +29,7 @@ gulp.task("nodemon", ["watch"], () => {
     ext: "js html css",
     ignore: ["src/app/**/*.js", "gulp", "test"]
   }).on("restart", () => {
+    livereload();
     console.log("server restart");
   })
 });

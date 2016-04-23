@@ -73,7 +73,7 @@ NoahsApp.controller("LeafletController", function($scope) {
     var markern = L.marker([coord[1], coord[0]]).addTo(mymap);
   }
 
-  var joku = L.marker([65.01275, 25.46815]).bindPopup('Tämä on paikka.');
+  var joku = L.marker([65.01275, 25.46815]).bindPopup('Tämä on paikka.').openPopup();
 
   var jokuryhma = L.layerGroup([joku]);
 
