@@ -1,4 +1,4 @@
-NoahsApp.controller("MapController", function($scope) {
+NoahsApp.controller("MapController", function($scope, PumpService) {
   function conversion(a, b) {
     var firstProjection = "+proj=utm +zone=35 +ellps=GRS80 +units=m +no_defs +towgs84=0,0,0,-0,-0,-0,0";
     var secondProjection = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs";
@@ -106,11 +106,18 @@ NoahsApp.controller("MapController", function($scope) {
 
   var jokuryhma = L.layerGroup([oikeaTuppi, vasenYla, oikeaAla, vasenAla, vimpeli, utajarvi, petajavesi, kuopio, kitee, joku2, joku]);
 
+  // var myMap = L.map('map', options);
+  // var measureControl = new L.Control.Measure(options);
+  // measureControl.addTo(myMap);
+
   var circle = L.circle([65.01275, 25.46815], 500, {
     color: 'red',
     fillColor: '#f03',
     fillOpacity: 0.5
   }).addTo(mymap);
 
+  var pumps = L.layerGroup(PumpService.createPumpMarkers(PumpService.fakePumps));
+
   jokuryhma.addTo(mymap);
+  pumps.addTo(mymap);
 })

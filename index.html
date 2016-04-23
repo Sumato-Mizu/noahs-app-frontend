@@ -7,18 +7,14 @@
   <!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <!-- <link rel="stylesheet" href="leaflet-measure/dist/leaflet-measure.css"> -->
   <!-- <link rel="stylesheet" href="lib/leaflet.css"> -->
   <link rel="stylesheet" href="http://openlayers.org/en/v3.15.1/css/ol.css" type="text/css">
   <link rel="stylesheet" type="text/css" href="app/stylesheets/styles.css" />
 </head>
 
-<body>
-  <div id="app" ng-app="NoahsApp">
-    <header>
-      <nav-directive></nav-directive>
-    </header>
-    <main ui-view id="main-container">
-    </main>
+<body ng-app="NoahsApp">
+  <div ui-view id="app">
   </div>
 
   <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
@@ -32,6 +28,7 @@
   <script src="lib/proj4js-compressed.js"></script>
   <script src="lib/proj4.js"></script>
   <script src="lib/proj4leaflet.js"></script>
+  <!-- <script src="leaflet-measure/dist/leaflet-measure.min.js"></script> -->
   <script src="app.min.js"></script>
 </body>
 
