@@ -1,9 +1,9 @@
 NoahsApp.controller("MainController", function($scope) {
   console.log("main controllerissa filussa");
   $scope.name = "olen mainikas";
-  
+
   var map = new ol.Map({
-    target: 'map',
+    target: 'mapopen',
     layers: [
       new ol.layer.Tile({
         source: new ol.source.MapQuest({

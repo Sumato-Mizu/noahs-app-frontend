@@ -2,3 +2,43 @@
   height: 400px;
   width: 100%;
 }
+
+html {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  border: 0px;
+}
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  border: 0px;
+  overflow: hidden;
+}
+#map {
+  min-height: 100%;
+  width: 100%;
+  padding: 0px;
+  border: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#search {
+  height: 100%: width: 320px;
+  border: 1px solid #C0C0C0;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #FFF;
+}
+#squeryframe {
+  padding: 2px;
+}
+#sresultframe {
+  padding: 2px;
+}
+#sresults {
+  font-size: 10px;
+}
