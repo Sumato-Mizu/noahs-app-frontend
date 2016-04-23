@@ -1,7 +1,4 @@
 NoahsApp.controller("MapController", function($scope) {
-  console.log("test controllerissa filussa");
-  $scope.name = "olen testiä";
-
   function conversion(a, b) {
     var firstProjection = "+proj=utm +zone=35 +ellps=GRS80 +units=m +no_defs +towgs84=0,0,0,-0,-0,-0,0";
     var secondProjection = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs";

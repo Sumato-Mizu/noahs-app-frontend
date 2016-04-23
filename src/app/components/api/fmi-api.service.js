@@ -13,10 +13,5 @@ NoahsApp.service("FmiAPIService", function($http) {
         console.log(result);
         return result.data;
       })
-      .catch(function(err) {
-        console.log("Calling API produced an error:");
-        console.log(err.data.message);
-        return [];
-      })
   }
 });

@@ -1,8 +1,12 @@
 <div class="main-container container">
   <h1>Is the coolest app ever.</h1>
-  <p>Hi. This is our app for parsing tif-links from the fmi-api <a href="http://data.fmi.fi/fmi-apikey/">http://data.fmi.fi/fmi-apikey/</a>.</p>
   <p>
-    You simply put your own API-key and the query you want to send to these fields
+    Hi. This is our app we made for Älykäs Vesi -hackathon 2016 Spring and <a href="https://github.com/Sumato-Mizu">here is our source code.</a> This app parses tif-links from the fmi-api <a href="http://data.fmi.fi/fmi-apikey/">http://data.fmi.fi/fmi-apikey/</a>
+    and also generates more human-readable pictures from them once you click "generate" on some of those links.
+    It might also put them on the Map if we somehow manage to get the coordinates right.
+  </p>
+  <p>
+    Here you simply put your own API-key and the query you want to send to these fields
     and then our API sends the request for you and fetches the XML-link and the tif-links for you.
     Cool stuff huh?
   </p>
@@ -18,7 +22,11 @@
     </form>
   </div>
   <h2>Results</h2>
-  <div ng-show="tiflinks.length !== 0">
+  <div ng-hide="checkIfErrorUndefined()">
+    <h3>Calling API caused an error!</h3>
+    <p>{{ apierror.message }}</p>
+  </div>
+  <div ng-show="checkIfErrorUndefined()">
     <h3>Resulting xml</h3>
     <a href="{{ fmilink }}">{{ fmilink }}</a>
     <h3>Resulting tif-files parsed from the xml</h3>

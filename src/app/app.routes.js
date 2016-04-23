@@ -1,5 +1,4 @@
 NoahsApp.config(function($stateProvider, $urlRouterProvider) {
-  console.log("heippa");
   $urlRouterProvider.otherwise("/");
 
   $stateProvider
