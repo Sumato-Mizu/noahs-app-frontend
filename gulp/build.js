@@ -27,8 +27,8 @@ gulp.task("nodemon", ["watch"], () => {
   nodemon({
     script: "index.js",
     ext: "js html css",
-    ignore: ["src/app/**/*.js", "dist", "gulp", "test"]
-  }).on("restart", function(){
+    ignore: ["src/app/**/*.js", "gulp", "test"]
+  }).on("restart", () => {
     console.log("server restart");
   })
-})
+});
