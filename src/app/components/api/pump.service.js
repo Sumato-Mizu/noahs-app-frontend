@@ -1,4 +1,5 @@
 NoahsApp.service("PumpService", function($http) {
+  this.pumps = [];
   this.fakePumps = [
     {
       id: 1,
@@ -29,6 +30,9 @@ NoahsApp.service("PumpService", function($http) {
     }
     return pumps;
   }
+  this.readPumpsFromTxt = function() {
+    this.pumps = this.fakePumps;
+  }
   this.fetchPumpData = function() {
     var config = {
       method: "POST",
@@ -41,6 +45,7 @@ NoahsApp.service("PumpService", function($http) {
     return $http(config)
       .then(function(result) {
         console.log(result);
+        this.pumps = result.data;
         return result.data;
       })
       .catch(function(err) {
@@ -49,4 +54,16 @@ NoahsApp.service("PumpService", function($http) {
         return [];
       })
   }
+  this.getPump = function(id) {
+    for(var i = 0; i < this.pumps.length; i++) {
+      console.log(this.pumps[i].id)
+      if (this.pumps[i].id === id) {
+        console.log(this.pumps[i]);
+        return this.pumps[i];
+      }
+    }
+    console.log("not found");
+    return "no pump found";
+  }
+  this.readPumpsFromTxt();
 })
