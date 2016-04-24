@@ -75,6 +75,8 @@ NoahsApp.controller("MapController", function($scope, PumpService) {
   // ];
 
   var tutkakuvaBounds = [
+    // [7907751.537, -118331.366],
+    // [875567.732, 6335621.167]
     [57.01073316247846, 35.67170826858529],
     [70.49988067141419, 8.5139235307523],
   ];
@@ -95,16 +97,18 @@ NoahsApp.controller("MapController", function($scope, PumpService) {
   var oikeaAla = L.marker([57.01073316247846, 10.2139235307523]).bindPopup("Oikea alakulma").openPopup();
   var vasenAla = L.marker([57.01073316247846, 37.37170826858529]).bindPopup("Vasen alakulma").openPopup();
 
-  var vimpeli = L.marker([63.10, 23.82]).bindPopup("Vimpelin tutka-asema").openPopup();
-  var utajarvi = L.marker([64.77, 26.32]).bindPopup("Utajärven tutka-asema").openPopup();
-  var petajavesi = L.marker([62.30, 25.44]).bindPopup("Petäjäveden tutka-asema").openPopup();
-  var kuopio = L.marker([62.86, 27.38]).bindPopup("Kuopion tutka-asema").openPopup();
-  var kitee = L.marker([61.91, 29.80]).bindPopup("Kiteen tutka-asema").openPopup();
+  // radars from http://ilmatieteenlaitos.fi/suomen-tutkaverkko
+  var ikaalinen = L.marker([61.7673, 23.0764]).bindPopup("Ikaalisen tutka-asema").openPopup();
+  var vimpeli = L.marker([63.1048, 23.8209]).bindPopup("Vimpelin tutka-asema").openPopup();
+  var utajarvi = L.marker([64.7749, 26.3189]).bindPopup("Utajärven tutka-asema").openPopup();
+  var petajavesi = L.marker([62.3045, 25.4401]).bindPopup("Petäjäveden tutka-asema").openPopup();
+  var kuopio = L.marker([62.8626, 27.3815]).bindPopup("Kuopion tutka-asema").openPopup();
+  var kesalahti = L.marker([61.9070, 29.7977]).bindPopup("Kiteen tutka-asema").openPopup();
 
   var joku2 = L.marker([65.01275, 25.56815]).bindPopup("<a target='_blank' href='https://google.com'>I am a popup.</a>").openPopup();
   var joku = L.marker([65.01275, 25.46815]).bindPopup("<a target='_blank' href='https://google.com'>I am a popup.</a>").openPopup();
 
-  var jokuryhma = L.layerGroup([oikeaTuppi, vasenYla, oikeaAla, vasenAla, vimpeli, utajarvi, petajavesi, kuopio, kitee, joku2, joku]);
+  var jokuryhma = L.layerGroup([oikeaTuppi, vasenYla, oikeaAla, vasenAla, ikaalinen, vimpeli, utajarvi, petajavesi, kuopio, kesalahti, joku2, joku]);
 
   // var myMap = L.map('map', options);
   // var measureControl = new L.Control.Measure(options);
