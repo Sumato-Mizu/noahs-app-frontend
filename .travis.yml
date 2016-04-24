@@ -1,5 +1,12 @@
 language: node_js
 script:
-  - npm run build
-  - npm --silent run lint
-  - npm --silent test
+- npm run build
+- npm --silent run lint
+- npm --silent test
+deploy:
+  provider: heroku
+  api_key:
+    secure: IsoC4IhvOs67hC7gpGGvCgmE9fgCTtpIpBf0zY8ee+c2KcgBwSIphRgzLYfd3pPYpBgyGJ/QhmAoanBb+eIjTOUZM6cfpCJXUSzr1PbxTyCAyLPiKW+IX4n1rNnQ5wSVsd/lOSPQ2U7C/eubW//qmiTuLaI7I097kiybM8K5oNQpCp3okP3iu78prtLkodHQ/xnH+IgTAEbjMenoO7Rnr8XMrLm3P40Rgvp4XPCNvbSLTFFGyeM1g3dFktQLOq4zs2xT2HTrIevafjBU908x2II1iYc2u43GnwsOZIKpIy0NMjZoZMWRF7WvfCm/UNd0lFuDyipzrCWxQOp4V7D2VwYSEsyAyQLqV67gCjlJ5ojjtknrh0/QhCkx+nsi+3APwzugwmD7NHEtbC+CSx1Sbg9uiw+DjPefwpnFffFFI0SSzAkc5wrlfEfq8NpOIG5QNKRm8fGFwQGbE5QqxxAWrkA4+6MxIj9tA7Jdt134CMpLOhuJZk0koJ5UnJib6Qz4ECOpjZVIEZJag+nP7stGpUZiPy7JA2t1AvNFXuThF0JTed/iGAgV0y4cn4jqLkOdqcBUHdZozMkhX888hYMtW/WxZJTAddxMsRLoPSmPDDEwfb1HKRISD7ogjnrUZbWBshZawCc+hVpI1VLH86rQYiqE2aRB+W4HrTQLkVnvYDc=
+  app: noahs-app
+  on:
+    repo: Sumato-Mizu/noahs-app-frontend
